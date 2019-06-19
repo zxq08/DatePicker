@@ -6,9 +6,15 @@
 		var ret = [];
 		
 		if(!year || !month){
-			var today = new Date();
-			year = today.getFullYear();
-			month = today.getMonth() + 1;
+			if(month === 0 && year){
+				year --;
+				month = 12;
+			}else{
+				var today = new Date();
+				year = today.getFullYear();
+				month = today.getMonth() + 1;
+			}
+			
 		}
 		
 		//判断这个月第一天是周几
